@@ -1,0 +1,27 @@
+{
+  "name": "GeoJSON Map Generator",
+  "image": "mcr.microsoft.com/devcontainers/python:3.9",
+  "features": {
+    // optional: adds git support if not present
+    "ghcr.io/devcontainers/features/git:1": {} 
+  },
+  
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": { 
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ritwickdey.liveserver" // Optional: Handy for viewing HTML
+      ]
+    }
+  },
+
+  // Commands to run after the container is created
+  "postCreateCommand": "pip install -r requirements.txt",
+
+  // Forward port 8000 so you can see the website in your local browser
+  "forwardPorts": [8000]
+}
